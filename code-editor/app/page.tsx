@@ -9,8 +9,10 @@ export default function Home() {
   }
 
   return (
-    <main className="flex justify-center items-start pt-10 h-screen">
-      <div className="w-full max-w-4xl p-4 border">
+    <main className="flex h-screen p-4">
+      <div
+        className="mockup-window border border-base-300 p-2 w-full"
+      >
         <form action="#" onSubmit={handleSubmit}>
           <div className="">
             <label htmlFor="comment" className="sr-only">
@@ -27,7 +29,7 @@ export default function Home() {
             <div className="flex-shrink-0">
               <button
                 type="submit"
-                className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500"
+                className="btn btn-accent"
               >
                 Run
               </button>
