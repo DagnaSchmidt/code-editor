@@ -1,11 +1,18 @@
 "use client";
-
 import Editor from "@monaco-editor/react";
 import { useState, useEffect } from "react";
 
+const INITIAL_VALUE: string = "value";
+const DEFAULT_LANGUAGE: string = "javascript";
+
 export default function Home() {
+  const [value, setValue] = useState<string>(INITIAL_VALUE);
   const handleSubmit = () => {
 
+  }
+
+  const handleValueChange = (newValue: string) => {
+    setValue(newValue);
   }
 
   return (
@@ -21,7 +28,8 @@ export default function Home() {
             <Editor
               height="50vh"
               defaultLanguage="javascript"
-              defaultValue='Deno.serve(req => new Response("Hello!"));'
+              value={value}
+              onChange={handleValueChange}
             />
           </div>
           <div className="flex justify-between pt-2">
