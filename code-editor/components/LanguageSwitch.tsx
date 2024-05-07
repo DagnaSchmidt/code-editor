@@ -3,7 +3,7 @@ import { LANGUAGES_VERSIONS } from "../app/constans";
 
 interface ILanguageSwitchProps {
     language: string;
-    onSelect: () => void
+    onSelect: Function
 }
 
 const LanguageSwitch = (props: ILanguageSwitchProps) => {
@@ -14,10 +14,10 @@ const LanguageSwitch = (props: ILanguageSwitchProps) => {
     }
     return (
         <select
-            className="select select-accent w-full max-w-xs"
+            className="select select-accent w-full select-sm max-w-xs"
             onChange={handleChange}
         >
-            <option disabled selected>-select language-</option>
+            <option disabled selected>-change language-</option>
             {
                 LANGUAGES_VERSIONS.map(i => <option value={i} key={i}>{i}</option>)
             }

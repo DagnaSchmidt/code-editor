@@ -15,8 +15,9 @@ const EditorWindow = () => {
 
     return (
         <div
-            className="mockup-window border border-base-300 p-2 w-full"
+            className="mockup-window border border-base-300 p-2 w-full flex flex-col gap-5"
         >
+            <LanguageSwitch language={language} onSelect={setLanguage} />
             <form action="#" onSubmit={handleSubmit}>
                 <div className="">
                     <label htmlFor="comment" className="sr-only">
