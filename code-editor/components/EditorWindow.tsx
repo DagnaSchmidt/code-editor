@@ -1,33 +1,42 @@
 "use client";
-import LanguageSwitch from "./LanguageSwitch";
-import Editor from "@monaco-editor/react";
-import { useState, useEffect } from "react";
 
+import { monaco } from "@monaco-editor/react";
+import Editor from "@monaco-editor/react";
+import React, { useState, useRef } from "react";
+
+import LanguageSwitch from "./LanguageSwitch";
 import { INITIAL_VALUE, DEFAULT_LANGUAGE } from "@/app/constans";
 
+
 const EditorWindow = () => {
+    const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
+
     const [value, setValue] = useState<string>(INITIAL_VALUE);
     const [language, setLanguage] = useState<string>(DEFAULT_LANGUAGE);
+
+
+    const handleMount = (editor: monaco.editor.IStandaloneCodeEditor) => {
+        editorRef.current = editor;
+        editor.focus();
+    };
 
     const handleSubmit = () => {
 
     }
+
 
     return (
         <div
             className="mockup-window border border-base-300 p-2 w-full flex flex-col gap-5"
         >
             <LanguageSwitch language={language} onSelect={setLanguage} />
-            <form action="#" onSubmit={handleSubmit}>
+            <form action="#" id="code-editor" onSubmit={handleSubmit}>
                 <div className="">
-                    <label htmlFor="comment" className="sr-only">
-                        Add your code
-                    </label>
                     <Editor
                         height="50vh"
                         defaultLanguage="javascript"
                         value={value}
-                    // onChange={handleValueChange}
+                        onMount={handleMount}
                     />
                 </div>
                 <div className="flex justify-between pt-2">

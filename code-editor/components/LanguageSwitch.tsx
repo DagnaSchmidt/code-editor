@@ -8,16 +8,14 @@ interface ILanguageSwitchProps {
 
 const LanguageSwitch = (props: ILanguageSwitchProps) => {
     const { language, onSelect } = props;
-    const handleChange = (e: React.SyntheticEvent) => {
-        e.preventDefault();
-        // onSelect(e.target.value)
-    }
+
+
     return (
         <select
             className="select select-accent w-full select-sm max-w-xs"
-            onChange={handleChange}
+            onChange={({ target }) => onSelect(target.value)}
         >
-            <option disabled selected>-change language-</option>
+            <option value="">-change language-</option>
             {
                 LANGUAGES_VERSIONS.map(i => <option value={i} key={i}>{i}</option>)
             }
