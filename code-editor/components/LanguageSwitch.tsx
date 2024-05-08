@@ -1,19 +1,27 @@
 import React from 'react';
-import { LANGUAGES_VERSIONS } from "../app/constans";
+import { LANGUAGES_VERSIONS, CODE_TEMPLATES } from "../app/constans";
 
 interface ILanguageSwitchProps {
     language: string;
-    onSelect: Function
+    onSelect: Function;
+    setDefaultValue: Function
 }
 
 const LanguageSwitch = (props: ILanguageSwitchProps) => {
-    const { language, onSelect } = props;
+    const { language, onSelect, setDefaultValue } = props;
+
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedLanguage = event.target.value;
+        onSelect(selectedLanguage);
+        setDefaultValue(selectedLanguage as keyof typeof CODE_TEMPLATES);
+    };
 
 
     return (
         <select
             className="select select-accent w-full select-sm max-w-xs"
-            onChange={({ target }) => onSelect(target.value)}
+            defaultValue={language}
+            onChange={handleChange}
         >
             <option value="">-change language-</option>
             {

@@ -11,6 +11,7 @@ import { INITIAL_VALUE, DEFAULT_LANGUAGE } from "@/app/constans";
 const EditorWindow = () => {
     const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
 
+    const [defaultValue, setDefaultValue] = useState<string>(INITIAL_VALUE);
     const [value, setValue] = useState<string>(INITIAL_VALUE);
     const [language, setLanguage] = useState<string>(DEFAULT_LANGUAGE);
 
@@ -20,23 +21,29 @@ const EditorWindow = () => {
         editor.focus();
     };
 
+    const handleChange: monaco.editor.IEditorProps["onChange"] = (newValue: string) => {
+        setValue(newValue);
+    };
+
     const handleSubmit = () => {
 
-    }
+    };
 
 
     return (
         <div
             className="mockup-window border border-base-300 p-2 w-full flex flex-col gap-5"
         >
-            <LanguageSwitch language={language} onSelect={setLanguage} />
+            <LanguageSwitch language={language} onSelect={setLanguage} setDefaultValue={setDefaultValue} />
             <form action="#" id="code-editor" onSubmit={handleSubmit}>
                 <div className="">
                     <Editor
                         height="50vh"
                         defaultLanguage="javascript"
+                        defaultValue={defaultValue}
                         value={value}
                         onMount={handleMount}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className="flex justify-between pt-2">
