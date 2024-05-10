@@ -1,7 +1,6 @@
 "use client";
 
-import { monaco } from "@monaco-editor/react";
-import Editor from "@monaco-editor/react";
+import Editor, { monaco } from "@monaco-editor/react";
 import React, { useState, useRef } from "react";
 
 import LanguageSwitch from "./LanguageSwitch";
