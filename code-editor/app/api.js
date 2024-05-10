@@ -1,8 +1,9 @@
-import { API_URL } from "./constants";
+import { API_URL, VERSIONS } from "./constans";
 
 export const executeCode = async (language, sourceCode) => {
     const data = {
         language: language,
+        version: VERSIONS[language],
         files: [
             {
                 content: sourceCode,

@@ -1,11 +1,11 @@
 import React from 'react';
-import { LANGUAGES_VERSIONS, CODE_TEMPLATES } from "../app/constans";
+import { LANGUAGES, CODE_TEMPLATES } from "../app/constans";
 
 interface ILanguageSwitchProps {
     language: string;
     onSelect: Function;
     setDefaultValue: Function
-}
+};
 
 const LanguageSwitch = (props: ILanguageSwitchProps) => {
     const { language, onSelect, setDefaultValue } = props;
@@ -25,7 +25,7 @@ const LanguageSwitch = (props: ILanguageSwitchProps) => {
         >
             <option value="">-change language-</option>
             {
-                LANGUAGES_VERSIONS.map(i => <option value={i} key={i}>{i}</option>)
+                LANGUAGES.map(i => <option value={i} key={i}>{i}</option>)
             }
         </select>
     )

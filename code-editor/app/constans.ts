@@ -8,10 +8,12 @@ export const CODE_TEMPLATES = {
 
 export const DEFAULT_LANGUAGE: string = "javascript";
 
-export const LANGUAGES_VERSIONS = [
-    "javascript",
-    "typescript",
-    "python"
-];
+export const LANGUAGES = ["javascript", "typescript", "python"];
+
+export const VERSIONS = {
+    javascript: "18.15.0",
+    typescript: "5.0.3",
+    python: "3.10.0",
+}
 
 export const API_URL = "https://emkc.org/api/v2/piston/execute";
