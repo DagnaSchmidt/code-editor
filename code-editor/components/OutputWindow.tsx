@@ -47,7 +47,7 @@ const OutputWindow = (props: IOutputWindowProps): React.JSX.Element => {
                 {output}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default OutputWindow;

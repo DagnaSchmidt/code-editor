@@ -20,4 +20,4 @@ export default function Home() {
       <OutputWindow editorRef={editorRef} language={language} />
     </main>
   );
-}
+};
