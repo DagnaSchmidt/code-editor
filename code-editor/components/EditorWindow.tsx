@@ -8,7 +8,7 @@ import LanguageSwitch from "./LanguageSwitch";
 import { INITIAL_VALUE, DEFAULT_LANGUAGE } from "@/app/constans";
 
 
-const EditorWindow = () => {
+const EditorWindow = (): React.JSX.Element => {
     const editorRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
 
     const [defaultValue, setDefaultValue] = useState<string>(INITIAL_VALUE);
@@ -32,13 +32,13 @@ const EditorWindow = () => {
 
     return (
         <div
-            className="mockup-window border border-base-300 p-2 w-full flex flex-col gap-5"
+            className="p-2 w-full flex flex-col gap-5 join-item artboard border-slate-200 border"
         >
             <LanguageSwitch language={language} onSelect={setLanguage} setDefaultValue={setDefaultValue} />
             <form action="#" id="code-editor" onSubmit={handleSubmit}>
                 <div className="">
                     <Editor
-                        height="50vh"
+                        height="70vh"
                         defaultLanguage="javascript"
                         defaultValue={defaultValue}
                         value={value}
