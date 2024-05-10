@@ -8,6 +8,7 @@ import LanguageSwitch from "./LanguageSwitch";
 import { INITIAL_VALUE } from "@/app/constans";
 
 
+
 interface IEditorWindowProps {
     editorRef: monaco.editor.IStandaloneCodeEditor | null;
     language: string;
