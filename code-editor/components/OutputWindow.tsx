@@ -1,5 +1,6 @@
 "use client"
 
+// @ts-ignore: Unreachable code error
 import { monaco } from "@monaco-editor/react";
 import { useState } from "react";
 import { executeCode } from "../app/api";

@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react";
+// @ts-ignore: Unreachable code error
 import { monaco } from "@monaco-editor/react";
 
 import { DEFAULT_LANGUAGE } from "./constans";

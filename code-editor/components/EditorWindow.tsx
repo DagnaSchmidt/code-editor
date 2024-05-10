@@ -1,8 +1,7 @@
 "use client";
 
-/* tslint:disable */
+// @ts-ignore: Unreachable code error
 import Editor, { monaco } from "@monaco-editor/react";
-/* tslint:enable */
 import React, { useState, useRef } from "react";
 
 import LanguageSwitch from "./LanguageSwitch";
